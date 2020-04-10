@@ -38,7 +38,7 @@ An exception is the `comment` form. It will create a new top level context, so t
 
 Here's a demo of the last repetition of such a workflow, for a simple implementation of the `abs` function:
 
-![top-level-eval](https://user-images.githubusercontent.com/30010/59426414-6ea0e000-8dd8-11e9-9db3-ae4ede2e0463.gif)
+![top-level-eval](images/howto/top-level-eval.gif)
 
 ### Copying the inline results
 
