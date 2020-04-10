@@ -100,6 +100,7 @@ Meanwhile, Calva is monitoring the output and when it sees that the app is start
 This whole connection sequence is quite configurable, using [Custom Connect Sequences](connect-sequences). In fact, Calva's built in ClojureScript sequences (Figwheel Main, lein-figwheel, shadow-cljs, and Nashorn) are all built using those same settings mechanisms.
 
 #### shadow-cljs is Less Managed by Calva
+
 **NB:** The managed way in which Calva creates and connects the ClojureScript REPL breaks apart a bit for shadow-cljs, which works a bit differently and also outputs most of the information Calva is looking for on the `stdout` of the REPL start command (where Calva can't see it, remember?). We'll figure out a better way to support shadow-cljs, but for now, the user needs to do more of this figuring out, than is needed with Figwheel projects.
 
 ### Hack Away

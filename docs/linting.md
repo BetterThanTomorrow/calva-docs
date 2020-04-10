@@ -3,6 +3,7 @@
 Calva does no linting, yet with Calva you get excellent linting. That is because Calva bundles the [clj-kondo](https://marketplace.visualstudio.com/items?itemName=borkdude.clj-kondo) extension, which is powered by the [linter with the same name](https://github.com/borkdude/clj-kondo).
 
 You might want to read about [how to configure clj-kondo](https://github.com/borkdude/clj-kondo/blob/master/doc/config.md#configuration). These two sections might be of extra interest:
+
 * [Exclude unresolved symbols from being reported](https://github.com/borkdude/clj-kondo/blob/master/doc/config.md#exclude-unresolved-symbols-from-being-reported)
 * [Lint a custom macro like a built-in macro](https://github.com/borkdude/clj-kondo/blob/master/doc/config.md#lint-a-custom-macro-like-a-built-in-macro)
 

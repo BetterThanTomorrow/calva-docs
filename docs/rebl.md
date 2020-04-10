@@ -89,6 +89,7 @@ A sample user profile (located at `~/.lein/profiles.clj` on mac)
 
 * Read [Custom REPL Connect Sequences](connect-sequences.md) if you haven't
 * Add the following to your vscode settings.json
+
 ```json
 {
     "calva.replConnectSequences": [

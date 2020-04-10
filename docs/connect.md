@@ -29,6 +29,7 @@ There are ways to tell Calva the answers to these prompts beforehand, so that Ja
 The main mechanism for customizing your Jack-in, including automating menu selections, and custom CLJS REPL types is [Custom Connect Sequences](connect-sequences.md).
 
 There are also these settings:
+
 * `calva.jackInEnv`: An object with environment variables that will be added to the environment of the Jack-in process.
 * `calva.myCljAliases`: An array of `deps.edn` aliases not found in the project file. Use this to launch your REPL using your user defined aliases.
 * `calva.myLeinProfiles`: An array of Leiningen profiles not found in `project.clj`. Use adding your user defined profiles to Jack-in launch of the REPL.
