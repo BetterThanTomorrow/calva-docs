@@ -1,7 +1,9 @@
 site_name: Calva Documentation
 theme: material
-site_url: https://calva.rocks
+site_url: https://calva.io
 repo_url: https://github.com/BetterThanTomorrow/calva-docs
+markdown_extensions:
+  - admonition
 nav:
   - index.md
   - Getting Started:

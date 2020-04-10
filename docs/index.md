@@ -8,7 +8,8 @@
 
 First thing you need to do is to get [Calva connected to the REPL of your project](connect.md). Then we suggest you check out [Something to Try First](try-first.md).
 
-One thing to note about Calva's code formatter is that it sets the default keybinding of the **Format Current Form** command to `tab`. Meaning that most often when things look a bit untidy, you can press `tab` to make things look pretty. Good to know, right? For performance reasons it only formats the current enclosing form, so sometimes you want to move the cursor up/out a form (`ctrl+up`) first. See [The Paredit Guide](paredit.md) for more on moving the cursor structurally through your code.
+!!! Tips
+    Calva's code formatter sets the default keybinding of its **Format Current Form** command to `tab`. Meaning that most often when things look a bit untidy, you can press `tab` to make things look pretty. Good to know, right? For performance reasons it only formats the current enclosing form, so sometimes you want to move the cursor up/out a form (`ctrl+up`) first. See [The Paredit Guide](paredit.md) for more on moving the cursor structurally through your code.
 
 ## How to Contribute to Calva?
 
