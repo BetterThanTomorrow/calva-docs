@@ -2,7 +2,7 @@ site_name: Calva Documentation
 theme:
   name: material
   custom_dir: theming/
-  favicon: 'img/favicon.ico'
+  favicon: img/favicon.ico
 extra_css:
   - stylesheets/extra.css
 site_url: https://calva.io
