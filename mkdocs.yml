@@ -7,7 +7,7 @@ extra_css:
   - stylesheets/extra.css
 site_url: https://calva.io
 site_description: Learn how to use Calva to boost your Clojure and ClojureScript coding in VS Code.
-repo_url: https://github.com/BetterThanTomorrow/calva
+repo_url: https://github.com/BetterThanTomorrow/calva-docs
 markdown_extensions:
   - admonition
 nav:
