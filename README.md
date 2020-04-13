@@ -15,6 +15,11 @@ Please feel invited to improve the Calva Docs! Like so:
     $ pip install -r requirements.txt
     ````
     (Or your preferred method from https://squidfunk.github.io/mkdocs-material/getting-started/)
+
+    If you get an error with the pip install method above, you may have an older version of python. If you install python 3.7 and run the following command, it should work:
+    ```sh
+    python3.7 -m pip install -r requirements.txt
+    ```
 0. Run the MkDocs server:
     ```sh
     $ mkdocs serve
