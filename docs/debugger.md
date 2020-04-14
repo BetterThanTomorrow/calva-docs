@@ -2,6 +2,8 @@
 
 Calva's debugger allows you to place breapoints via reader tags so that execution will pause at those locations. During paused execution, you can see the value of local variables in the side pane, as well as evaluate code within the local context - via the editor or the repl-window, just as you normally would evaluate code. You can also use the step operations to advance execution.
 
+![Debugger stepping](images/debugger/stepping.gif)
+
 !!! note
     The debugger currently does not support ClojureScript. Calva's debugger utilizes cider-nrepl for debugging. See [this Cider issue](https://github.com/clojure-emacs/cider/issues/1416) for more information.
 
