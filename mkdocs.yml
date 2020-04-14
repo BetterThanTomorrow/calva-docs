@@ -12,6 +12,7 @@ repo_name: calva-docs
 repo_url: https://github.com/BetterThanTomorrow/calva-docs
 markdown_extensions:
   - admonition
+  - codehilite
 nav:
   - index.md
   - Getting Started:

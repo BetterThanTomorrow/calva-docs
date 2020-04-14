@@ -11,23 +11,29 @@ The documentation is built using [MkDocs](https://www.mkdocs.org) + [MkDocs Mate
 Please feel invited to improve the Calva Docs! Like so:
 
 0. Install MkDocs + Materials
+
     ```sh
-    $ pip install -r requirements.txt
+    pip install -r requirements.txt
     ````
+
     (Or your preferred method from https://squidfunk.github.io/mkdocs-material/getting-started/)
 
     If you get an error with the pip install method above, you may have an older version of python. If you install python 3.7 and run the following command, it should work:
+
     ```sh
     python3.7 -m pip install -r requirements.txt
     ```
+
 0. Run the MkDocs server:
+
     ```sh
-    $ mkdocs serve
+    mkdocs serve
     ```
+
 0. Visit http://localhost.8000
 0. Edit docs. It's all Markdown. When you save, the changes will be reloaded in the browser.
 
-Note: The MkDocs Markdown is a bit pickier than GitHub's, so make sure to use four indents, put an empty line before bulleted lists, and so on. _And make sure to check the results at your local site._
+Note: The MkDocs Markdown is a bit pickier than GitHub's, so make sure to use four indents, put an empty line before bulleted lists, and so on. The VS Code extension markdownlint helps with following the appropriate style. _And make sure to check the results at your local site._
 
 Currently there is no CI, so once it looks fine at your local site, file the PR.
 
@@ -36,10 +42,5 @@ Currently there is no CI, so once it looks fine at your local site, file the PR.
 Only users with push access to this repo can do this:
 
 ```sh
-$ mkdocs gh-deploy --clean
+mkdocs gh-deploy --clean
 ```
-
-
-
-
-
