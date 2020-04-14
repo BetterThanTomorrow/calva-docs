@@ -82,7 +82,7 @@ You can use VS Code's debugger UI to advance execution while debugging.
 * **Step in** - Steps in to the function about to be called. If the next breakpoint is not around a function call, does the same as next. Note that not all functions can be stepped in to - only normal functions stored in vars, for which cider-nrepl can find the source. You cannot currently step in to multimethods, protocol functions, or functions in clojure.core (although multimethods and protocols can be instrumented manually).
 * **Step out** - Steps to the next breakpoint that is outside of the current sexp
 * **Restart** - Does nothing. To restart debugging, you can hit disconnect or continuue execution through the final result, then re-evaluate the expression that started the debugger.
-* **Disconnect** - Disconnect the debugger. You likely will see a null pointer exception from `cider.nrepl.middleware.debug/abort!` - this is a known issue and can be ignored (the debugger successfully disconnects).
+* **Disconnect** - Disconnects the debugger
 
 ## Caveats
 
