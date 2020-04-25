@@ -26,11 +26,36 @@ Calva sets some VS Code settings for all Clojure files. Some of these are needed
         "editor.formatOnPaste": true,
         "files.trimTrailingWhitespace": false,
         "editor.matchBrackets": "never",
+        "editor.renderIndentGuides": false,
         "editor.parameterHints.enabled": false
     }
 ```
+## Pretty Printing
 
-### Automatic Parmaeter Hints Poppup
+Calva's pretty printing mode can be configured a bit. See [Pretty Printing](pprint.md).
+
+## Calva Highlight
+
+Calva takes care of syntax highlighting, and also provides some features not available through VS Code's highlighting mechanism. These extras include rainbow parens, sane bracket matching, and comment form dimming/highlighting.
+
+You are in charge of how brackets and comments are highlighted via the `calva.highlight.<setting>` settings:
+
+| Setting | Meaning | Example |
+| --- | ------- | ------- |
+| `enableBracketColors` | Enable rainbow colors |  `true` |
+| `rainbowIndentGuides` | Enable rainbow indent guides |  `true` |
+| `highlightActiveIndent` | Highlight the active indent guide |  `true` |
+| `bracketColors` | Which colors to use |  `["#000", "#999"]` |
+| `cycleBracketColors` | Whether same colors should be <br> reused for deeply nested brackets | `true` |
+| `misplacedBracketStyle` | Style of misplaced bracket | `{ "border": "2px solid #c33" }` |
+| `matchedBracketStyle` | Style of bracket pair highlight | `{"backgroundColor": "#E0E0E0"}` |
+| `ignoredFormStyle` | Style of `#_...` form | `{"textDecoration": "none; opacity: 0.5"}` |
+| `commentFormStyle` | Style of `(comment ...)` form | `{"fontStyle": "italic"}` |
+
+!!! Note
+    The VS Code built-in settings `editor.renderIndentGuides` and `editor.highlightActiveIndent` do not have any effect, since the former is switched off by the **Clojure Defaults**, mentioned above. Use Calva Highlight's `rainbowIndentGuides` and `highlightActiveIndent` instead. They are different from the built in ones in that they are independent, meaning you can choose to have active indent highlighted while the guides generally are not rendered (this is the default, even).
+
+## Automatic Parmaeter Hints Poppup
 
 Calva has helpful parameter hints to aid when typing function calls. They look like so:
 
@@ -65,31 +90,14 @@ The REPL Window prompt is a multi line editor, and the keyboard shortcuts facili
 
 As you might see, the simple pattern here is that in multi-line mode you move the cursor and enter new lines as in the regular editor, and use `alt` modifier to navigate the history and submit evaluations. In single-line mode it is the other way around.
 
-## Pretty Printing
 
-Calva's pretty printing mode can be configured a bit. See [Pretty Printing](pprint.md).
-
-## Calva Highlight
-
-Calva takes care of syntax highlighting, and also provides some features not available through VS Code's highlighting mechanism. These extras include rainbow parens, sane bracket matching, and comment form dimming/highlighting.
-
-You are in charge of how brackets and comments are highlighted via the `calva.highlight.<setting>` settings:
-
-| Setting | Meaning | Example |
-| --- | ------- | ------- |
-| `enableBracketColors` | Enable rainbow colors |  `true` |
-| `bracketColors` | Which colors to use |  `["#000", "#999"]` |
-| `cycleBracketColors` | Whether same colors should be reused for deeply nested brackets | `true` |
-| `misplacedBracketStyle` | Style of misplaced bracket | `{ "border": "2px solid #c33" }` |
-| `matchedBracketStyle` | Style of bracket pair highlight | `{"backgroundColor": "#E0E0E0"}` |
-| `ignoredFormStyle` | Style of `#_...` form | `{"textDecoration": "none; opacity: 0.5"}` |
-| `commentFormStyle` | Style of `(comment ...)` form | `{"fontStyle": "italic"}` |
-
-The extras are built from **Clojure Warrior**, created by [Nikita Prokopov, a.k.a. @tonsky](https://tonsky.me)'s. Please note that the default styling for `(comment ...)` forms now is to italicize them (instead of dimming). This is to promote using `comment` forms to work with the REPL.
 
 ## Key bindings
 
-* These key binds replace the default Calva ”prefix”, `ctrl+alt+c` to just `alt+v`: [WebWItch's keybindings.json](https://gist.github.com/conan/aa38688d7daa50804c8a433215dc6dc9) (Please note, that `alt+v` does not work for some locales, but for when it works it is much less clunky than the default prefix).
+Here are a collection of custom keybindings from here and there.
+
+* Replace all Calva `ctrl+alt+...` key bindings with `ctrl+shift+...`, for keyboards lacking `alt` key: https://gist.github.com/PEZ/3fc22e015e0d33fb9b73074fd6abf292
+* Replace the default Calva ”prefix”, `ctrl+alt+c` to just `alt+v`: [WebWItch's keybindings.json](https://gist.github.com/conan/aa38688d7daa50804c8a433215dc6dc9) (Please note, that `alt+v` does not work for some locales, but for when it works it is much less clunky than the default prefix).
 * Here the Calva key is switched for `ctrl+,`: [manas_marthi's keybindings](https://gist.github.com/pikeview/317f639091f57c3055681b06f0dc791a)
 * [Keybindings for Emacs users](emacs-keybindings.md)
 
