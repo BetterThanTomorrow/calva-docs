@@ -11,8 +11,9 @@ Calva comes with a powerful expression-based debugger, inspired by [Cider](https
 
 ### Current
 
-* Set breakpoints with `#break`
-* Instrument forms with `#dbg`
+* Instrument functions for debugging with `ctrl+alt+c i`
+* Instrument a function manually with `#dbg` (as opposed to the above command)
+* Set individual breakpoints with `#break`
 * Continue to next breakpoint
 * Step over form
 * Step into form
@@ -24,22 +25,33 @@ Calva comes with a powerful expression-based debugger, inspired by [Cider](https
 ### Upcoming
 
 * See structured variables in the debugger side pane (currently maps and collections are just shown as strings)
-* Command for instrumenting a function (vs adding `#dbg` directly in the code), as well as visual indication that a function is instrumented. This will remove the need to place reader tags in your code file.
+* Inject values into the debug context
+* Trace: continue, printing expressions and their values
 
 ## Using the Debugger
 
-If you're new to Clojure or expression-based debuggers, this debugger may function differently than what you're used to. Instead of placing breakpoints in the side margin and then hitting F5 to start debugging, you instead use Clojure reader tags (`#break` and `#dbg`) to denote breakpoints anywhere in a Clojure form. When you evaluate a call to a function that has been evaluated with those reader tags, the debugger will start when execution reaches the first breakpoint.
+If you're new to Clojure or expression-based debuggers, this debugger may function differently than what you're used to. Instead of placing breakpoints in the side margin and then hitting F5 to start debugging, you instead use Clojure reader tags, `#break` and `#dbg`, to denote breakpoints anywhere in a Clojure form. When you evaluate a call to a function that has been evaluated with that reader tag, the debugger will start when execution reaches the first breakpoint. There's also a convenience command to instrument functions - see below.
+
+### Instrumenting a Function
+
+You can instrument a top level function for debugging with `ctrl+alt+c i`. This places invisible breakpoints throughout the function where pausing makes sense. When you evaluate a call to this function, the debugger will start and execution will pause at the first breakpoint. Annotations show the value of the form at the cursor.
+
+A border is placed around the definition of the instrumented function and its references to show that it's instrumented. You can remove instrumentation by evaluating the function again normally, such as with `ctrl+alt+c space`.
+
+![Instrumenting a function](images/debugger/instrumenting-a-function.gif)
 
 ### Setting Breakpoints with `#break`
 
-You can insert a breakpoint manually into any code by placing a `#break` in front of the form where you want execution to pause, and then evaluating the top level form with `ctrl+alt+c space`. When you evaluate a call to this code the VS Code debugger will start, the cursor will move to right after the form that's preceded by `#break`, and the line will be highlighted so show execution is paused there. You'll also see an annotation for the value of the current form.
+You can insert a breakpoint manually into any code by placing a `#break` in front of the form where you want execution to pause, and then evaluating the top level form with `ctrl+alt+c space`. When you evaluate a call to this code the VS Code debugger will start, the cursor will move to right after the form that's preceded by `#break`, and the line will be highlighted to show execution is paused there.
 
 ![Setting a breakpoint with #break](images/debugger/break.gif)
 
 !!! note
     Code will be executed up to and *including* the form after the breakpoint.
 
-You can also set conditional breapoints by adding metadata before the form that the `#break` applies to.
+### Conditional Breakpoints
+
+You can set conditional breapoints by adding metadata before the form that the `#break` applies to.
 
 ```clojure
 (defn print-nums [n]
@@ -50,7 +62,7 @@ You can also set conditional breapoints by adding metadata before the form that 
 
 ### Instrumenting a Form with `#dbg`
 
-Adding `#dbg` before a form then evaluating the form with `ctrl+alt+c space` will instrument the form, meaning breakpoints will be added in places where it makes sense. When you evaluate the form (or a call to a function containing breakpoints), execution will pause wherever breakpoints were added. These breakpoints are not visible in the editor. If you notice execution does not pause, it's likely that no reasonable place was found to place a breakpoint.
+Adding `#dbg` before a form then evaluating the form with `ctrl+alt+c space` will instrument the form. This has the same effect as using [the instrument command](#instrumenting-a-function).
 
 ![Instrumenting a form](images/debugger/dbg-form.gif)
 
@@ -64,7 +76,7 @@ When execution is paused at a breakpoint, you can evaluate code in that context.
 
 ### Viewing Variable Values While Debugging
 
-While debugging, you can view the values of variables in VS Code's debugger side pane. You can also view values by hovering over the variables in the editor. Currently, values for collections and maps are shown as strings, but we plan to make them structured in the future. For now, if you want to see the value of a large structured variable, you can evaluate the variable, either from the editor or from the REPL window.
+While debugging, you can view the values of variables in VS Code's debugger side pane. You can also view values by hovering over the variables in the editor. Currently, values for collections and maps are shown as strings, but we plan to make them structured in the future. For now, if you want to see the value of a large structured variable, you can evaluate the variable from the editor or from the REPL window.
 
 ![Viewing variable values in the side pane](images/debugger/viewing-variable-values.png)
 
@@ -88,7 +100,7 @@ You can use VS Code's debugger UI to advance execution while debugging.
 
 ### Breakpoints in loop/recur
 
-One construct where the debugger is limited is `loop`/`recur`. As recur always has to appear in a tail-position inside a `loop` or a `fn` and the debugger uses macros to interleave breakpoints in the forms it **might** happen that a `recur` no longer appears in a tail position. In that case we have to avoid setting up the breakpoint. An example of such a case is:
+One construct where the debugger is limited is `loop`/`recur`. As recur always has to appear in a tail-position inside a `loop` or a `fn` and the debugger uses macros to interleave breakpoints in the forms, it **might** happen that a `recur` no longer appears in a tail position. In that case we have to avoid setting up the breakpoint. An example of such a case is:
 
 ```clojure
 (loop [i 0]
@@ -102,13 +114,13 @@ Here the breakpoint is exactly in front of a form that contains as its last expr
 
 ### Loading the File and "Eval On Save"
 
-When you load a file, any breakpoints that were previously set in functions will be unset. If you have the "Eval On Save" setting enabled, your file is also loaded with each save, therefore saving the file will remove breakpoints previously set. This loading for "Eval On Save" may be removed in the future so that only evaluation occurs and not loading.
+When you load a file, any breakpoints that were previously set in functions will be unset. If you have the "Eval On Save" setting enabled, your file is also loaded with each save, therefore saving the file will remove breakpoints previously set.
 
 ## Troubleshooting
 
 ### My breakpoint isn't being hit
 
-It's likely that your breakpoint is in a place that cider-nrepl does not see as an apporpriate place to break execution. For example, if you put a breakpoint before a literal number, it will not be hit, because there's no need to show the value of a literal.
+It's likely that your breakpoint is in a place that cider-nrepl does not see as an appropriate place to break execution. For example, if you put a breakpoint before a literal number, it will not be hit, because there's no need to show the value of a literal.
 
 ```clojure
 (defn simple [x]
