@@ -98,7 +98,7 @@ Here are a collection of custom keybindings from here and there.
 
 * Replace all Calva `ctrl+alt+...` key bindings with `ctrl+shift+...`, for keyboards lacking `alt` key: https://gist.github.com/PEZ/3fc22e015e0d33fb9b73074fd6abf292
 * Replace the default Calva ”prefix”, `ctrl+alt+c` to just `alt+v`: [WebWItch's keybindings.json](https://gist.github.com/conan/aa38688d7daa50804c8a433215dc6dc9) (Please note, that `alt+v` does not work for some locales, but for when it works it is much less clunky than the default prefix).
-* Here the Calva key is switched for `ctrl+,`: [manas_marthi's keybindings](https://gist.github.com/pikeview/317f639091f57c3055681b06f0dc791a)
+* Here the Calva key is switched for `ctrl+,`: [manas_marthi's keybindings](https://gist.github.com/emelens/317f639091f57c3055681b06f0dc791a)
 * [Keybindings for Emacs users](emacs-keybindings.md)
 
 Are you a vim extension user? See: [Using with VIM extension](vim.md).
