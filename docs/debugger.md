@@ -28,6 +28,10 @@ Calva comes with a powerful expression-based debugger, inspired by [Cider](https
 * Inject values into the debug context
 * Trace: continue, printing expressions and their values
 
+## Dependencies
+
+The debugger itself relies pretty heavily on [cider-nrepl](https://github.com/clojure-emacs/cider-nrepl), as do other parts of Calva, and the decorations to show instrumented functions rely on [clj-kondo](https://github.com/borkdude/clj-kondo). Both of these libraries are loaded as dependencies when you use Calva Jack-in. If you are not using Calva Jack-in, you can add these dependencies in your project definition or user profile. See the [Calva Jack-in guide](/jack-in-guide) for more information.
+
 ## Using the Debugger
 
 If you're new to Clojure or expression-based debuggers, this debugger may function differently than what you're used to. Instead of placing breakpoints in the side margin and then hitting F5 to start debugging, you instead use Clojure reader tags, `#break` and `#dbg`, to denote breakpoints anywhere in a Clojure form. When you evaluate a call to a function that has been evaluated with that reader tag, the debugger will start when execution reaches the first breakpoint. There's also a convenience command to instrument functions - see below.
