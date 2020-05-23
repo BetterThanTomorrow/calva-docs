@@ -30,7 +30,7 @@ Please feel invited to improve the Calva Docs! Like so:
     mkdocs serve
     ```
 
-0. Visit http://localhost.8000
+0. Visit http://localhost:8000
 0. Edit docs. It's all Markdown. When you save, the changes will be reloaded in the browser.
 
 Note: The MkDocs Markdown is a bit pickier than GitHub's, so make sure to use four indents, put an empty line before bulleted lists, and so on. The VS Code extension markdownlint helps with following the appropriate style. _And make sure to check the results at your local site._
