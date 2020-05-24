@@ -1,6 +1,6 @@
 # Calva and the VIM Extension
 
-First thing first. The [VIM Extension](https://github.com/VSCodeVim/Vim) and Calva has some friction between them. Expect it to be a bit painful.
+First thing first. The [VIM Extension](https://github.com/VSCodeVim/Vim) and Calva has some friction between them. Expect it to be a bit painful. The alternative [VSCode Neovim](https://github.com/asvetliakov/vscode-neovim) extension may fare a bit better as it unbinds keystrokes from VS Code while not in insert mode and uses Neovim as a backend.
 
 ## Selection commands
 
@@ -8,7 +8,20 @@ Calva's various structural selection commands [do not put VIM into VISUAL mode](
 
 ## Key bindings
 
-In general Calva's default key bindings are not very VI-ish. **This is a call for someone to share their VIM re-mappings**.
+In general Calva's default key bindings are not very VI-ish.
+
+You can add these keybindings to your `init.vim` if you are using the VSCode Neovim extension. It is inspired by and tries to emulate the keybindings found in [vim-fireplace](https://github.com/tpope/vim-fireplace) which is the most popular vim plugin for clojure.
+
+```
+nmap cqp :call VSCodeNotify('calva.jackIn')<CR>
+nmap cqq :call VSCodeNotify('calva.disconnect')<CR>
+nmap cpr :call VSCodeNotify('calva.loadFile')<CR>
+nmap cpR :call VSCodeNotify('calva.loadNamespace')<CR>
+nmap cpp :call VSCodeNotify('calva.evaluateSelection')<CR>
+nmap cqc :call VSCodeNotify('calva.evalCurrentFormInREPLWindow')<CR>
+```
+
+Unfortunately these key combinations will not work in the normal VIM extension as `c` is an [operator key](https://github.com/VSCodeVim/Vim/issues/4464) and cannot be remapped. **This is a call for someone to share their VIM re-mappings**.
 
 ### Expand selection
 
@@ -25,7 +38,7 @@ Alternatively, you can use the native Vim command `Ctrl + [` to escape and get b
 - Open the Keyboard Shortcuts JSON file from the Command Palette
 - Disable `clearInlineResults` and remap the command e.g.
 
-```
+```json
 // Place your key bindings in this file to override the defaults
 [
   {
@@ -36,7 +49,7 @@ Alternatively, you can use the native Vim command `Ctrl + [` to escape and get b
     "key": "shift+escape",
     "command": "calva.clearInlineResults",
     "when": "editorTextFocus && !editorHasMultipleSelections && !editorReadOnly && !hasOtherSuggestions && !suggestWidgetVisible && editorLangId == 'clojure'"
-  },
+  }
 ]
 ```
 
@@ -60,4 +73,3 @@ Remap vim's insert mode keybinding to go into command mode by adding the followi
 ## No Vim mode for the REPL Window
 
 This is not likely to be fixed anytime soon. (Because, a **lot** of work.)
-
