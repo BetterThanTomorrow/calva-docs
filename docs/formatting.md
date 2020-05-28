@@ -2,6 +2,9 @@
 
 We have tried to make Calva's formatter so that it _just works_. It is enabled by default for Clojure files, and unconfigured it mostly follows Bozhidar Batsov's [Clojure Style Guide](https://github.com/bbatsov/clojure-style-guide). Calva uses [cljfmt](https://github.com/weavejester/cljfmt) for the formatting.
 
+!!! Tips
+    Calva's code formatter sets the default keybinding of its **Format Current Form** command to `tab`. Meaning that most often when things look a bit untidy, you can press `tab` to make things look pretty. Good to know, right? For performance reasons it only formats the current enclosing form, so sometimes you want to move the cursor up/out a form (`ctrl+up`) first. See [The Paredit Guide](paredit.md) for more on moving the cursor structurally through your code.
+
 With the default settings, Calva's formatting behaves like so:
 
 * formats as you type (when entering new lines)

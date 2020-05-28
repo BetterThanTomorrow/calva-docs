@@ -8,15 +8,20 @@
 
 First thing you need to do is to get [Calva connected to the REPL of your project](connect.md). Then we suggest you check out [Something to Try First](try-first.md).
 
-!!! Tips
-    Calva's code formatter sets the default keybinding of its **Format Current Form** command to `tab`. Meaning that most often when things look a bit untidy, you can press `tab` to make things look pretty. Good to know, right? For performance reasons it only formats the current enclosing form, so sometimes you want to move the cursor up/out a form (`ctrl+up`) first. See [The Paredit Guide](paredit.md) for more on moving the cursor structurally through your code.
-
 ## How to Contribute to Calva?
 
 I'm glad you asked! Please see the [Calva Development Wiki](https://github.com/BetterThanTomorrow/calva/wiki). (There, in a section labeled **The Tao of Calva**, we also try to make clear *why* you would want to contribute.)
+
+### Sponsors ♥️
+
+That said, one way to contribute is certainly to become a [sponsor](https://github.com/sponsors/PEZ). The Calva README lists all [current sponsors](https://github.com/BetterThanTomorrow/calva#calva-sponsors-%EF%B8%8F). **Calva Gold Sponsors** gets displayed here. Currently:
+
+<a href="https://liftoff.io" title="Scale your growth on mobile"><img src="https://liftoff.io/wp-content/themes/liftoff/images/logo-blue.png" height="45px" alt="Liftoff"/></a>
+
+If your Company benefits from Calva's existence and see it as an important piece of the Clojure and ClojureScript ecosystem. please consider sponsoring.
 
 ## Have Questions and Feedback? Need Help?
 
 Easiest way is to chat with us and other Calva users. Please join the [#calva channel](https://clojurians.slack.com/messages/calva) on the Clojurians Slack.
 
-Happy coding! ❤️
+Happy coding!
