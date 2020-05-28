@@ -37,6 +37,7 @@ nav:
     - wsl.md
     - remote-development.md
     - luminus.md
+    - re-frame-template.md
   - Etcetera:
     - workspace-layouts.md
     - quirks.md
