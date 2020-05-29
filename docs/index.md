@@ -12,13 +12,13 @@ First thing you need to do is to get [Calva connected to the REPL of your projec
 
 I'm glad you asked! Please see the [Calva Development Wiki](https://github.com/BetterThanTomorrow/calva/wiki). (There, in a section labeled **The Tao of Calva**, we also try to make clear *why* you would want to contribute.)
 
-### Sponsors ♥️
-
-That said, one way to contribute is certainly to become a [sponsor](https://github.com/sponsors/PEZ). The Calva README lists all [current sponsors](https://github.com/BetterThanTomorrow/calva#calva-sponsors-%EF%B8%8F). **Calva Gold Sponsors** gets displayed here. Currently:
+### Calva Gold Sponsors ♥️
 
 <a href="https://liftoff.io" title="Scale your growth on mobile"><img src="https://liftoff.io/wp-content/themes/liftoff/images/logo-blue.png" height="45px" alt="Liftoff"/></a>
 
-If your Company benefits from Calva's existence and see it as an important piece of the Clojure and ClojureScript ecosystem. please consider sponsoring.
+See [Sponsors](sponsors.md) for more information about this.
+
+If your Company benefits from Calva's existence and you see it as an important in the Clojure and ClojureScript ecosystem. please consider sponsoring!
 
 ## Have Questions and Feedback? Need Help?
 
