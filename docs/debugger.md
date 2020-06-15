@@ -22,7 +22,7 @@ Calva comes with a powerful expression-based debugger, inspired by [Cider](https
 * See variable values in the debugger side pane
 * See variable values on hover in the editor
 
-### Upcoming
+### Future goals
 
 * See structured variables in the debugger side pane (currently maps and collections are just shown as strings)
 * Inject values into the debug context
@@ -121,6 +121,18 @@ Here the breakpoint is exactly in front of a form that contains as its last expr
 When you load a file, any breakpoints that were previously set in functions will be unset. If you have the "Eval On Save" setting enabled, your file is also loaded with each save, therefore saving the file will remove breakpoints previously set.
 
 ## Troubleshooting
+
+### Debugger hangs when stepping over infinite seqs
+
+This is because the debugger tries to evaluate the form when it's stepped over, and if `clojure.core/*print-length*` is set to `nil` as it is by default, evaluation will never complete. If you want to debug a form with an infinite seq, make sure to set `*print-length*` beforehand. For example:
+
+```clojure
+(set! *print-length* 3)
+;; Or, to be more precise
+(set! clojure.core/*print-length* 3)
+```
+
+Calva does not set this for you during debug mode, instead leaving it up to you to decide the value.
 
 ### My breakpoint isn't being hit
 
