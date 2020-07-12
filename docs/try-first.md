@@ -6,7 +6,7 @@ To get a feeling for evaluating code in the editor and get immediate response fr
 
 1. On a new line, type a `comment` form and put some code inside it:
 
-```clojure
+```
 (comment
   (+ (* 2 2)
      2)
