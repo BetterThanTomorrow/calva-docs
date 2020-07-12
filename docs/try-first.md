@@ -5,17 +5,19 @@ You should start with loading the file you are working with. Do this with **Load
 To get a feeling for evaluating code in the editor and get immediate response from the REPL try this:
 
 1. On a new line, type a `comment` form and put some code inside it:
-    ```clojure
-    (comment
-      (+ (* 2 2)
-         2)
-      (Math/abs -1)
-      (hello "Calva REPL")
-      (defn hello [s]
-        (str "Hello " s))
-      (range 10)
-      "I ♥️ Clojure")
-    ```
+
+```clojure
+(comment
+  (+ (* 2 2)
+     2)
+  (Math/abs -1)
+  (hello "Calva REPL")
+  (defn hello [s]
+    (str "Hello " s))
+  (range 10)
+  "I ♥️ Clojure")
+```
+
 2. Place the cursor behind the form `(* 2 2)` and issue the command **Calva: Evaluate Current Form**, `ctrl+alt+c e` (`ctrl+alt+c v` on Windows).
     * You should see the result being displayed inline. Press `esc` to dismiss it.
 3. Now issue the command **Evaluate Current Top Level Form (defun)**, `ctrl+alt+c space`.
