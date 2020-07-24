@@ -4,16 +4,15 @@ Many projects grow out of the template phase and call for custom developer workf
 
 NB: _Connect sequence configuration affect Calva's Jack-in menu in the following ways:_
 
-1. With _no sequence_ configured, Calva will prompt for the built in sequences it has that seems to match your project.
-1. With _only one_ custom connect sequence specified, Calva will skip prompting for sequences and use your custom sequence.
-1. With _more than one_  sequence specified, Calva will prompt with a menu consisting of these custom sequences.
+1. With _no sequence_ configured, Calva will prompt for the built-in sequences it has that seems to match your project.
+1. When any number of connection sequences are configured, Calva will prompt for your custom sequences, as well as the built-in sequences. As with the built-in sequences, it will only include them in the prompt if they're relevant to your project type.
 
 ## Settings for adding Custom Sequences
 
 A connect sequence configures the following:
 
 * `name`: (required) This will show up in the Jack-in quick-pick menu when you start Jack-in (see above).
-* `projectType`: (required) This is either "Leiningen”, ”Clojure-CLI”, ”shadow-cljs”, ”lein-shadow”, or ”generic".
+* `projectType`: (required) This is either "Leiningen”, ”Clojure CLI”, ”shadow-cljs”, ”lein-shadow”, or ”generic".
 * `nReplPortFile`: An array of path segments with the project root-relative path to the nREPL port file for this connect sequence. E.g. For shadow-cljs this would be `[".shadow-cljs", "nrepl.port"]`.
 * `afterCLJReplJackInCode`: Here you can give Calva some Clojure code to evaluate in the CLJ REPL, once it has been created.
 * `cljsType`: This can be either "Figwheel Main", "lein-figwheel", "shadow-cljs", "Nashorn", "none", or a dictionary configuring a custom type. If set to "none", Calva will skip connecting a ClojureScript repl. A custom type has the following fields:
@@ -34,8 +33,7 @@ A connect sequence configures the following:
     * `cljsLaunchBuilds`: The cljs builds to start/watch at Jack-in/connect.
     * `cljsDefaultBuild`: Which cljs build to attach to at the initial connect.
 
-The [Calva built-in sequences](https://github.com/BetterThanTomorrow/calva/blob/master/src/nrepl/connectSequence.ts) also uses this format, check them out to get a clearer picture of how these settings work.
-
+The [Calva built-in sequences](https://github.com/BetterThanTomorrow/calva/blob/master/src/nrepl/connectSequence.ts) also use this format, check them out to get a clearer picture of how these settings work.
 
 ## Example Sequences
 
