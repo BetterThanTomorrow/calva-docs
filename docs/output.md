@@ -58,7 +58,9 @@ The output window is mostly a regular... (you get it), which means you also have
 
 ## It is Ephemeral
 
-The contents of the output/REPL window is written to a file named `output.repl-file` in the `.calva` directory of your project. The file is recreated at every new session. You might want to add `.calva/output.repl-file` to your `.<something>ignore` files. And you should copy anything you want to keep from this file to wherever you want to keep it.
+The contents of the output/REPL window is written to a file named `output.repl-file` in the `.calva/output-window` directory of your project. The file is recreated at every new session. And you should copy anything you want to keep from this file to wherever you want to keep it.
+
+You probably want to add `.calva/output-window/` to your `.<something>ignore` files. (There are some more files in that directory that you shouldn't keep under source control.)
 
 ## Choose CLJ or CLJS REPL Connection
 
