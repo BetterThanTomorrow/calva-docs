@@ -22,6 +22,7 @@ nav:
     - eval-tips.md
   - Features:
     - commands-top10.md
+    - output.md
     - formatting.md
     - paredit.md
     - debugger.md

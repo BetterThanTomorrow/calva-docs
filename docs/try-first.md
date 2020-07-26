@@ -4,26 +4,30 @@ You should start with loading the file you are working with. Do this with **Load
 
 To get a feeling for evaluating code in the editor and get immediate response from the REPL try this:
 
-1. On a new line, type a `comment` form and put some code inside it:
-    ```
-    (comment
-      (+ (* 2 2)
-         2)
-      (Math/abs -1)
-      (hello "Calva REPL")
-      (defn hello [s]
-        (str "Hello " s))
-      (range 10)
-      "I ♥️ Clojure")
-    ```
+* On a new line, type a `comment` form and put some code inside it:
 
-2. Place the cursor behind the form `(* 2 2)` and issue the command **Calva: Evaluate Current Form**, `ctrl+alt+c e` (`ctrl+alt+c v` on Windows).
+```clojure
+(comment
+  (+ (* 2 2)
+      2)
+  (Math/abs -1)
+  (hello "Calva REPL")
+  (defn hello [s]
+    (str "Hello " s))
+  (range 10)
+  "I ♥️ Clojure")
+```
+
+Then:
+
+1. Place the cursor behind the form `(* 2 2)` and issue the command **Calva: Evaluate Current Form**, `ctrl+enter`.
     * You should see the result being displayed inline. Press `esc` to dismiss it.
-3. Now issue the command **Evaluate Current Top Level Form (defun)**, `ctrl+alt+c space`.
+1. Now issue the command **Evaluate Current Top Level Form (defun)**, `alt+enter`.
     * You should see the whole form `(+ (* 2 2) 2)` getting highlighted and the result of that expression being displayed inline.
-4. Evaluate each form inside the comment form using the **Top Level** command.
+1. Evaluate each form inside the comment form using the **Top Level** command.
     * You should see each one of them evaluated.
-    * Evaluating the `(hello "Calva REPL")` form before the `(defn hello...` form should result in an error/exception. Try it again after having evaluated the `defn`form.
+    * Evaluating the `(hello "Calva REPL")` form before the `(defn hello...` form should result in an error/exception. A stacktrace is then printed in the [output window](output.md)
+    * Try it again after having evaluated the `defn`form.
 
 Demo:
 
