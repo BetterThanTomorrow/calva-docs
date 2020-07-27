@@ -1,6 +1,6 @@
 # Calva and the VIM Extension
 
-First thing first. The [VIM Extension](https://github.com/VSCodeVim/Vim) and Calva has some friction between them. Expect it to be a bit painful. The alternative [VSCode Neovim](https://github.com/asvetliakov/vscode-neovim) extension may fare a bit better as it unbinds keystrokes from VS Code while not in insert mode and uses Neovim as a backend.
+First thing first. The [VIM Extension](https://github.com/VSCodeVim/Vim) and Calva has some friction between them. The alternative [VSCode Neovim](https://github.com/asvetliakov/vscode-neovim) extension may fare a bit better as it unbinds keystrokes from VS Code while not in insert mode and uses Neovim as a backend.
 
 ## Selection commands
 
@@ -69,7 +69,3 @@ Remap vim's insert mode keybinding to go into command mode by adding the followi
 ```
 
 (Change `before` to whatever keybinding you are comfortable with!)
-
-## No Vim mode for the REPL Window
-
-This is not likely to be fixed anytime soon. (Because, a **lot** of work.)
