@@ -12,10 +12,9 @@ Calva has commands for evaluating the **current form** and the **current top-lev
 
 You can also choose what should happen with the results:
 
-1. **Inline.** This will display the results (or some of it, if it is long) inline in the editor. _You find the full results in the hover of the eveluated form_, from where it is easy to copy it to the clipboard. (The results will also get printed to the **Calva says** output channel.)
+1. **Inline.** This will display the results (or some of it, if it is long) inline in the editor. _You find the full results in the [output window](output.md)_, from where it is easy to copy it to the clipboard.
 1. **To comments.** This will add the results as comment lines below the current line.
 1. **Replace the evaluated code.** This will do what it says, the evaluated code will be replaced with its results.
-1. **Send to REPL window.** You can also send the current form, or current top-level form, to the REPL window for evaluation. This is currently the only way to get a readable and clickable stack trace in cases where evaluation results in such errors.
 
 ## Wait, Current Form? Top-level Form?
 

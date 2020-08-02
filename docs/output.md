@@ -36,6 +36,21 @@ then evaluate it using `alt+enter`, you'll get:
 
 This, since the namespace ”followed” the first evaluation over to the output window.
 
+## Peek at Results
+
+On smaller screens (or just depending on your taste) you might not have the output window visible side-by-side with your code, but rather in a tab in the same editor group.
+
+Then your immediate feedback will be the inline display, which is limited to the first line of the results. All is not lost, however, you can peek at the full results using VS Code's command **Peek Definition**. Calva adds a definition pointer ”in” to the evaluated code in the output window.
+
+![Peek at results](images/howto/output/peek-last-result.gif)
+
+(On Mac the default keyboard shortcut for the peek command is `alt+f12`.)
+
+In the demo gif we utilize two things about this peek widgets:
+
+1. It stays open until you close it. So you can keep evaluate different versions of your form and see the results get printed.
+2. The widget displays a ”full” Calva editor, so you can use Paredit to conveniently select forms.
+
 ## Stacktraces
 
 When an evaluation produces an error, the output window will automatically print the stacktrace (when available). It will be printed as an EDN structure. And when source locations are available you will be able to navigate to them by `command+click` (Mac) or `ctrl+click` (Windows and Linux).
