@@ -17,7 +17,7 @@ It works like so:
 See also: [Workspace Layouts](workspace-layouts.md)
 
 !!! Note
-    You must have a project file, such as `project.clj` for Leiningen or `deps.edn` for Clojure CLI, in the directory opened in VS Code in order for jack-in to work. If, after adding the project file, you experience an error during jack-in that says something could not be located, make sure you have the correct dependencies in your project file. For example, when using the **Figwheel Main** project type, you should have `figwheel-main` in your project dependencies.
+    You must have a project file, such as `project.clj` for Leiningen or `deps.edn` for Clojure CLI, in the directory opened in VS Code in order for jack-in to work. If, after adding the project file, you experience an error during jack-in that says something could not be located, make sure you have the correct dependencies in your project file. For example, when using the **Figwheel Main** project type, you should have `com.bhauman/figwheel-main` in your project dependencies.
 
 ### Aliases, profiles, builds
 
