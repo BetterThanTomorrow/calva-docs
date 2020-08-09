@@ -74,7 +74,7 @@ Adding `#dbg` before a form then evaluating the form with `ctrl+alt+c space` wil
 
 ### Evaluating Code in the Paused Context
 
-When execution is paused at a breakpoint, you can evaluate code in that context. This can be done in the editor or in the REPL window, as usual. In the REPL window, the prompt changes to `<<debug-mode>>=>` to show that evaluations will occur in the debug context.
+When execution is paused at a breakpoint, you can evaluate code in that context. This can be done in the editor or in the REPL window, as usual.
 
 ![Evaluating code in the paused context from the editor](images/debugger/eval-editor.gif "Evaluating code in the paused context from the editor")
 

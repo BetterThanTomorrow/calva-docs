@@ -47,11 +47,4 @@ This works regardless if you have evaluated in a file editor or in a REPL window
 
 ## Evaluating in a REPL window
 
-To evaluate code in the REPL window either send a form from the editor (as mentioned above) or type it at the prompt and submit it. There is also a repl history that you can access with `alt+up/down`.
-
-Note that the repl prompt is a _multiline_ mini Clojure editor. So if you press `enter` while the cursor is not at the end of the line, it will create a new line. To submit the code at the prompt you have three options:
-
-1. Place the cursor at the end of the all the code, `end` (`fn+right` on Macs lacking an `end` key).
-2. Press `alt+enter`. This submits and prints the results un-altered.
-
-See also above about sending forms from the file editors to the REPL window for evaluation.
+Since the REPL Window is mostly just a regular file, things work pretty similar at the REPL prompt. You use `alt+enter` to evaluate. Selecting the current form (default key binding `ctrl+w` after evaluating will select the result.

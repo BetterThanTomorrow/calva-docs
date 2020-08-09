@@ -116,6 +116,4 @@ Care has been put in to making the default keybindings somewhat logical, easy to
 
 Note: You can choose to disable all default key bindings by configuring `calva.paredit.defaultKeyMap` to `none`. (Then you probably also want to register your own shortcuts for the commands you often use.)
 
-If you add your own key bindings, please be aware that [shortcuts with typable characters will work badly in the the REPL window](https://github.com/microsoft/vscode/issues/85879). Please avoid.
-
 Happy Editing! ❤️

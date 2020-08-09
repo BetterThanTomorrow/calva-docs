@@ -7,7 +7,7 @@ The `calva.customREPLCommandSnippets` is an object/dictionary with the following
 * `name`: The name of the snippet as it will appear in the picker menu
 * `snippet`: The code that will be evaluated
 * `ns`: (optional) Namespace to evaluate the command in. If omitted the command will be executed in the namespace of the current editor.
-* `replType`: Which REPL window to use for the evaluation. Either `"clj"` or `"cljs"`
+* `repl`: Which repl session to use for the evaluation. Either `"clj"` or `"cljs"`
 
 E.g. with these settings:
 
