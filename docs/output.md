@@ -36,6 +36,20 @@ then evaluate it using `alt+enter`, you'll get:
 
 This, since the namespace ”followed” the first evaluation over to the output window.
 
+## REPL History
+
+Recently evaluated forms in the REPL file are persisted and can easily be shown again for modifying and re-evaluating.
+
+### Navigate REPL History
+
+You can navigate up and down the last forms evaluated in the REPL file by using `alt+up` and `alt+down`, provided your cursor is at the end of the last form after the prompt. If the cursor is not at the end of the last form, then `alt+up` and `alt+down` will do what they are mapped to, which is by default "Move Line Up" and "Move Line Down," respectively.
+
+If you have typed some text after the prompt before you start traversing up the history, this text will be preserved and will display when you traverse back down the history. If you modify some text in the history while traversing, the modification will be saved at that location in history.
+
+### Clear REPL History
+
+You can clear the repl history by running the command "Clear REPL History" from the command palette.
+
 ## Peek at Results
 
 On smaller screens (or just depending on your taste) you might not have the output window visible side-by-side with your code, but rather in a tab in the same editor group.
@@ -73,7 +87,7 @@ The output window is mostly a regular... (you get it), which means you also have
 
 ## It is Ephemeral
 
-The contents of the output/REPL window is written to a file named `output.repl-file` in the `.calva/output-window` directory of your project. The file is recreated at every new session. And you should copy anything you want to keep from this file to wherever you want to keep it.
+The contents of the output/REPL window is written to a file named `output.repl` in the `.calva/output-window` directory of your project. The file is recreated at every new session. And you should copy anything you want to keep from this file to wherever you want to keep it.
 
 You probably want to add `.calva/output-window/` to your `.<something>ignore` files. (There are some more files in that directory that you shouldn't keep under source control.)
 
