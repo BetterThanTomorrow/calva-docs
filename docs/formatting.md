@@ -11,7 +11,7 @@ With the default settings, Calva's formatting behaves like so:
 * formats the current enclosing form when you hit `tab`
 * formats pasted code
 * formats according to community standards (see above link)
-* formats the current form, _aligning map key, values_, when you press `ctrl+alt+l`.
+* formats the current form, _aligning map keys and values_, when you press `ctrl+alt+l`.
 
 Also: If you have **Format on Save** enabled in VS Code, it will be Calva doing the formatting for Clojure files.
 
@@ -52,13 +52,13 @@ Since you are editing the file in Calva (you are, right?), you can quickly test 
 (This particular setting is experimental and known to cause trouble together with namespaced keywords. Consider using `ctrl+alt+l` instead of `tab` as your formatting command, instead of enabling this setting.)
 
 !!! Note
-    The hot reloading of the config file does only work for config files inside the project directory structure.
+    The hot reloading of the config file only works for config files inside the project directory structure.
 
 ### Indentation rules
 
 The `cljfmt` indents are highly configurable. They, and the rest of the configuration options, are masterly detailed [here](https://github.com/weavejester/cljfmt#configuration).
 
-Calva is an extra good tool for experimenting with these settings. `cljfmt` doesn't care about keys in the map that it doesn't now about so you can sneak in test code there to quickly see how it will get formatted by certain rules. Try this, for instance:
+Calva is an extra good tool for experimenting with these settings. `cljfmt` doesn't care about keys in the map that it doesn't know about so you can sneak in test code there to quickly see how it will get formatted by certain rules. Try this, for instance:
 
 ```clojure
 {:remove-surrounding-whitespace? true
@@ -84,7 +84,7 @@ Save, then hit `tab`, and the code should get formatted like so:
         (range 1 hn))))
 ```
 
-That's somewhat similar to Nikita Prokopov's [Better Clojure Formatting](https://tonsky.me/blog/clojurefmt/) suggestion. (Please be aware that this setting might not be sufficient to get complete **Tonsky Formatting**, please share any settings you do to get full compliance.)
+That's somewhat similar to Nikita Prokopov's [Better Clojure Formatting](https://tonsky.me/blog/clojurefmt/) suggestion. (Please be aware that this setting might not be sufficient to get complete **Tonsky Formatting**, please share any settings you use to get full compliance.)
 
 ## Under Construction
 

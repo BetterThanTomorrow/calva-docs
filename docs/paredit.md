@@ -31,7 +31,7 @@ Toggle bewteen Strict and Cave Man using: `ctrl+alt+p ctrl+alt+m`
 
 ## Commands
 
-The Paredit commands sorts into **Navigation**, **Selection**, and **Edit**. As mentioned, **Slurp** and **Barf** are power commands, which go into the editing category. Learning to navigate structurally, using shortcuts, also saves time and adds precision to your editing. It has the double effect that you at the same time learn how to select structurally, because that is the same, just adding the shift key.
+The Paredit commands are sorted into **Navigation**, **Selection**, and **Edit**. As mentioned, **Slurp** and **Barf** are power commands, which go into the editing category. Learning to navigate structurally, using shortcuts, also saves time and adds precision to your editing. It has the double effect that you at the same time learn how to select structurally, because that is the same, just adding the shift key.
 
 To make the command descriptions a bit clearer, each entry is animated. When you try to figure out what is going on in the GIFs, focus on where the cursor is at the start of the animation loop.
 
@@ -65,7 +65,7 @@ Default keybinding    | Action | Description
  `ctrl+alt+w space`      | **Select Top Level Form** | Top level in a structural sence. Typically where your`(def ...)`/`(defn ...)` type forms. Please note that`(comment ...)` forms create a new top level. <br> ![](images/paredit/select-top-level-form.gif)
 
 
-The selecting ”versions” of the navigation commands above. They will all grow whatever current selection as far as the **Shrink Selection** command is concerned.
+The selecting ”versions” of the navigation commands above. They will all grow the current selection as far as the **Shrink Selection** command is concerned.
 
 Default keybinding    | Action | Description
 ------------------    | ------ | --------------

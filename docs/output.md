@@ -63,9 +63,9 @@ Then your immediate feedback will be the inline display, which is limited to the
 
 (On Mac the default keyboard shortcut for the peek command is `alt+f12`.)
 
-In the demo gif we utilize two things about this peek widgets:
+In the demo gif we utilize two things about this peek widget:
 
-1. It stays open until you close it. So you can keep evaluate different versions of your form and see the results get printed.
+1. It stays open until you close it. So you can keep evaluating different versions of your form and see the results get printed.
 2. The widget displays a ”full” Calva editor, so you can use Paredit to conveniently select forms.
 
 ## Stacktraces
@@ -96,7 +96,7 @@ You probably want to add `.calva/output-window/` to your `.<something>ignore` fi
 
 ## Choose CLJ or CLJS REPL Connection
 
-In full stack projects, you will probably use the window as a REPL for both for `clj` and `cljs` project. You can toggle which REPL the window is connected to using the the command **Calva: Toggle REPL Connection for CLJC files**. There is a button for this in the status bar:
+In full stack projects, you will probably use the window as a REPL for both `clj` and `cljs`. You can toggle which REPL the window is connected to using the command **Calva: Toggle REPL Connection for CLJC files**. There is a button for this in the status bar:
 
 ![Toggle CLJC](images/howto/cljc-toggle-button.png)
 

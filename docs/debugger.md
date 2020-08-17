@@ -34,19 +34,19 @@ The debugger itself relies pretty heavily on [cider-nrepl](https://github.com/cl
 
 ## Using the Debugger
 
-If you're new to Clojure or expression-based debuggers, this debugger may function differently than what you're used to. Instead of placing breakpoints in the side margin and then hitting F5 to start debugging, you instead use Clojure reader tags, `#break` and `#dbg`, to denote breakpoints anywhere in a Clojure form. When you evaluate a call to a function that has been evaluated with that reader tag, the debugger will start when execution reaches the first breakpoint. There's also a convenience command to instrument functions - see below.
+If you're new to Clojure or expression-based debuggers, this debugger may function differently than what you're used to. Instead of placing breakpoints in the side margin and then hitting F5 to start debugging, you instead use Clojure reader tags, `#break` and `#dbg`, to denote breakpoints anywhere in a Clojure form. When you evaluate a call to a function that has been evaluated with that reader tag, the debugger will start when execution reaches the first breakpoint. There's also a convenience command to instrument functions. Read below about both options.
 
 ### Instrumenting a Function
 
 You can instrument a top level function for debugging with `ctrl+alt+c i`. This places invisible breakpoints throughout the function where pausing makes sense. When you evaluate a call to this function, the debugger will start and execution will pause at the first breakpoint. Annotations show the value of the form at the cursor.
 
-A border is placed around the definition of the instrumented function and its references to show that it's instrumented. You can remove instrumentation by evaluating the function again normally, such as with `ctrl+alt+c space`.
+A border is placed around the definition of the instrumented function and its references to show that it's instrumented. You can remove instrumentation by evaluating the function again normally, such as with `alt+enter`.
 
 ![Instrumenting a function](images/debugger/instrumenting-a-function.gif "Instrumenting a function")
 
 ### Setting Breakpoints with `#break`
 
-You can insert a breakpoint manually into any code by placing a `#break` in front of the form where you want execution to pause, and then evaluating the top level form with `ctrl+alt+c space`. When you evaluate a call to this code the VS Code debugger will start, the cursor will move to right after the form that's preceded by `#break`, and the line will be highlighted to show execution is paused there.
+You can insert a breakpoint manually into any code by placing a `#break` in front of the form where you want execution to pause, and then evaluating the top level form with `alt+enter`. When you evaluate a call to this code the VS Code debugger will start, the cursor will move to right after the form that's preceded by `#break`, and the line will be highlighted to show execution is paused there.
 
 ![Setting a breakpoint with #break](images/debugger/break.gif "Setting a breakpoint with `#break`")
 
@@ -66,7 +66,7 @@ You can set conditional breapoints by adding metadata before the form that the `
 
 ### Instrumenting a Form with `#dbg`
 
-Adding `#dbg` before a form then evaluating the form with `ctrl+alt+c space` will instrument the form. This has the same effect as using [the instrument command](#instrumenting-a-function).
+Adding `#dbg` before a form then evaluating the form with `alt+enter` will instrument the form. This has the same effect as using [the instrument command](#instrumenting-a-function).
 
 ![Instrumenting a form](images/debugger/dbg-form.gif "Instrumenting a non-function form")
 
@@ -114,7 +114,7 @@ One construct where the debugger is limited is `loop`/`recur`. As recur always h
     (recur (inc i))))
 ```
 
-Here the breakpoint is exactly in front of a form that contains as its last expression a `recur` which is not wrapped in a loop. This breakpoint has no effect. This does not mean you cannot use the debugger with `loop`, it just means you have to set your debug statements more carefully.
+Here the breakpoint is exactly in front of a form that contains as its last expression a `recur` which is wrapped in a loop. This breakpoint has no effect. This does not mean you cannot use the debugger with `loop`, it just means you have to set your debug statements more carefully.
 
 ### Loading the File and "Eval On Save"
 
