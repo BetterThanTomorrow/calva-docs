@@ -4,8 +4,6 @@ Calva tries to make it easy to evaluate code, supporting interactive development
 
 NB: _The below assumes you have read about [Finding Calva Commands and Shortcuts](finding-commands.md)._
 
-There are some different ”flavors” to the evaluation. And it depends on if you are evaluating in a file editor or a in a REPL window.
-
 ## Evaluation in a File Editor
 
 Calva has commands for evaluating the **current form** and the **current top-level form**.
@@ -28,7 +26,7 @@ The current form either means the current selection, or otherwise is based on th
 
 The current top-level form means top-level in a structural sense. It is _not_ the topmost form in the file. Typically in a Clojure file you will find `def` and `defn` (and `defwhatever`) forms at the top level, but it can be any form not enclosed in any other form.
 
-An exception is the `comment` form. It will create a new top level context, so that any forms immediatlly inside a `(commment ...)` form will be considered top-level by Calva. This is to support a workflow where you
+An exception is the `comment` form. It will create a new top level context, so that any forms immediately inside a `(commment ...)` form will be considered top-level by Calva. This is to support a workflow where you
 
 1. Iterate on your functions.
 2. Evaluate the function (top level).
@@ -41,7 +39,7 @@ Here's a demo of the last repetition of such a workflow, for a simple implementa
 
 ### Copying the inline results
 
-The easiest way is to use the **Copy** button in the result hover. There is also the **Copy last evaluation results** command, `ctrl+alt+c ctrl+c`.
+There is a command called **Copy last evaluation results**, `ctrl+alt+c ctrl+c`.
 
 This works regardless if you have evaluated in a file editor or in a REPL window.
 

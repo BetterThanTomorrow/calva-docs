@@ -1,6 +1,6 @@
 # Something to Try First (After Connecting)
 
-You should start with loading the file you are working with. Do this with **Loading Current File and Dependencies**, `ctrl+alt+c enter`.
+You should start with loading the file you are working with. Do this with **Load Current File and Dependencies**, `ctrl+alt+c enter`.
 
 To get a feeling for evaluating code in the editor and get immediate response from the REPL try this:
 
