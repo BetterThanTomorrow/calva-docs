@@ -34,8 +34,8 @@ The main mechanism for customizing your Jack-in, including automating menu selec
 There are also these settings:
 
 * `calva.jackInEnv`: An object with environment variables that will be added to the environment of the Jack-in process.
-* `calva.myCljAliases`: An array of `deps.edn` aliases not found in the project file. Use this to launch your REPL using your user defined aliases.
-* `calva.myLeinProfiles`: An array of Leiningen profiles not found in `project.clj`. Use adding your user defined profiles to Jack-in launch of the REPL.
+* `calva.myCljAliases`: An array of `deps.edn` aliases not found in the project file. Use this to tell Calva Jack-in to launch your REPL using your user defined aliases.
+* `calva.myLeinProfiles`: An array of Leiningen profiles not found in `project.clj`. Use this to tell Calva Jack-in to launch your REPL using your user defined profiles.
 * `calva.openBrowserWhenFigwheelStarted`: _For Legacy Figwheel only._ A boolean controlling if Calva should automatically launch your ClojureScript app, once it is compiled by Figwheel. Defaults to `true`.
 
 ### Troubleshooting
