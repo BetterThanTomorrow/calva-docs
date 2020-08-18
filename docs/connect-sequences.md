@@ -2,10 +2,10 @@
 
 Many projects grow out of the template phase and call for custom developer workflows involving application start commands, customized REPLs, and what have you. Even some templates add this kind of complexity. To make Jack-in usable for a broader set of projects, Calva has a setting keyed `calva.replConnectSequences` which lets you configure one ore more connect sequences.
 
-NB: _Connect sequence configuration affect Calva's Jack-in menu in the following ways:_
+NB: _Connect sequence configuration affects Calva's Jack-in menu in the following ways:_
 
 1. With _no sequence_ configured, Calva will prompt for the built-in sequences it has that seems to match your project.
-1. When any number of connection sequences are configured, Calva will prompt for your custom sequences, as well as the built-in sequences. As with the built-in sequences, it will only include them in the prompt if they're relevant to your project type.
+1. When any number of connection sequences are configured, Calva will prompt for your custom sequences, as well as the built-in sequences. Whether built-in or custom, only sequences relevant to your project will be included in the prompt.
 
 ## Settings for adding Custom Sequences
 
@@ -16,7 +16,7 @@ A connect sequence configures the following:
 * `nReplPortFile`: An array of path segments with the project root-relative path to the nREPL port file for this connect sequence. E.g. For shadow-cljs this would be `[".shadow-cljs", "nrepl.port"]`.
 * `afterCLJReplJackInCode`: Here you can give Calva some Clojure code to evaluate in the CLJ REPL, once it has been created.
 * `cljsType`: This can be either "Figwheel Main", "lein-figwheel", "shadow-cljs", "Nashorn", "none", or a dictionary configuring a custom type. If set to "none", Calva will skip connecting a ClojureScript repl. A custom type has the following fields:
-    * `dependsOn`: (required) Calva will use this to determine which dependencies it will add when starting the project (Jacking in). This can be either "Figwheel Main", "lein-figwheel", "shadow-cljs", "Nashorn", or ”User provided”. If it is "User provided", then you need to provide the dependencies in the project, or launch with an alias (deps.edn), profile (Leiningen), or build (shadow-cljs) that provides the dependencies needed.
+    * `dependsOn`: (required) Calva will use this to determine which dependencies it will add when starting the project (Jacking in). This can be either "Figwheel Main", "lein-figwheel", "shadow-cljs", "Nashorn", or ”User provided”. If it is "User provided", then you need to provide the dependencies in the project or launch with an alias (deps.edn), profile (Leiningen), or build (shadow-cljs) that provides the dependencies needed.
     * `isStarted`: Boolean. For CLJS REPLs that Calva does not need to start, set this to true. (If you base your custom cljs repl on a shadow-cljs workflow, for instance.)
     * `startCode`: Clojure code to be evaluated to create and/or start your custom CLJS REPL.
     * `isStartedRegExp`: A regular expression which, when matched in the stdout from the startCode evaluation, will make Calva continue with connecting the REPL, and to prompt the user to start the application. If omitted and there is startCode Calva will continue when that code is evaluated.

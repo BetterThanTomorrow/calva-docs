@@ -2,7 +2,7 @@
 
 Calva supports configuration of custom command snippets that you can execute in the REPL at will. If your workflow has you repeatedly evaluate a particular piece of code, you can use the setting `calva.customREPLCommandSnippets` to configure it and then use the command **Run Custom REPL Command** to access it. The command will give you a menu with the snippets you have configured.
 
-The `calva.customREPLCommandSnippets` is an object/dictionary with the following fields:
+The `calva.customREPLCommandSnippets` is an array of objects with the following fields:
 
 * `name`: The name of the snippet as it will appear in the picker menu
 * `snippet`: The code that will be evaluated

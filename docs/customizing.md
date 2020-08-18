@@ -2,7 +2,7 @@
 
 Don't like the defaults? On this page we can collect some of the customizations that people have done, and maybe write a thing or two about it some day.
 
-Tip For VS Code newcomers: The search box in **Settings** is your friend. Also, some Calva settings are more complex than the Settings UI can handle. VS Code will then show you a link to `settings.json`. And VS Code's built-in `json` extension is awesome. To add settings for, say Calva's Pretty Printing, search for ”prettyprint” in VS Code Settings and follow the link to `settings.json`. Start typing ”calvapretty” until auto-complete suggests `calva.prettyPrintingOptions`. Press ENTER and VS Code will fill in these defaults:
+Tip for VS Code newcomers: The search box in **Settings** is your friend. Also, some Calva settings are more complex than the Settings UI can handle. VS Code will then show you a link to `settings.json`. And VS Code's built-in `json` extension is awesome. To add settings for Calva's Pretty Printing, for example, search for ”prettyprint” in VS Code Settings and follow the link to `settings.json`. Start typing ”calvapretty” until auto-complete suggests `calva.prettyPrintingOptions`. Press ENTER and VS Code will fill in these defaults:
 
 ```json
     "calva.prettyPrintingOptions": {
@@ -14,7 +14,7 @@ Tip For VS Code newcomers: The search box in **Settings** is your friend. Also, 
 
 ## Clojure Defaults
 
-Calva sets some VS Code settings for all Clojure files. Some of these are needed for Calva to function correctly, which should not be tampered with unless you really know what you are doing, and some of them are for convenience defaults. If you add a setting to your `settings.json` and accept the snippet help you get when you type `"[clojure]"`, you will get the Calva defaults pasted:
+Calva sets some VS Code settings for all Clojure files. Some of these are needed for Calva to function correctly, which should not be tampered with unless you really know what you are doing, and some of them are convenient defaults. If you add a setting to your `settings.json` and accept the snippet help you get when you type `"[clojure]"`, you will get the Calva defaults pasted:
 
 ```json
     "[clojure]": {
@@ -65,7 +65,7 @@ To have the hints automatically pop up when you are typing, set `editor.paramete
 
 ## Code Formatting
 
-See [Formatting] for information on how to configure this.
+See [Formatting](formatting.md) for information on how to configure this.
 
 ## Jack-in and Connect Sequences
 
@@ -75,7 +75,7 @@ Jack-in and Connect are very customizable through [Custom Connect Sequences](con
 
 Here are a collection of custom keybindings from here and there.
 
-* Replace all Calva `ctrl+alt+...` key bindings with `ctrl+shift+...`, for keyboards lacking `alt` key: https://gist.github.com/PEZ/3fc22e015e0d33fb9b73074fd6abf292
+* Replace all Calva `ctrl+alt+...` key bindings with `ctrl+shift+...`, for keyboards lacking `alt` key: [this gist](https://gist.github.com/PEZ/3fc22e015e0d33fb9b73074fd6abf292)
 * Replace the default Calva ”prefix”, `ctrl+alt+c` to just `alt+v`: [WebWItch's keybindings.json](https://gist.github.com/conan/aa38688d7daa50804c8a433215dc6dc9) (Please note, that `alt+v` does not work for some locales, but for when it works it is much less clunky than the default prefix).
 * Here the Calva key is switched for `ctrl+,`: [manas_marthi's keybindings](https://gist.github.com/emelens/317f639091f57c3055681b06f0dc791a)
 * [Keybindings for Emacs users](emacs-keybindings.md)
@@ -90,7 +90,7 @@ Please be aware that the REPL window does not handle chorded shortcuts. Somethin
 
 Something I use in IntelliJ/Cursive is the ability to select an expression and hit one of `(`, `[`, `{` to wrap it. And after wrapping the expression I don't want the selection anymore, so if I were wrapping `(foo)` then I would want to get `( | (foo))` where `|` would be my cursor.
 
-Here's how you can make this work with Calva Paredit: Update all of the `Paredit: Wrap Around ...` commands so that their respective shortcuts are the wrappers themselves and update the `when` clause to include `editorHasSelection` (otherwise when you open a paren and the next expression would get slurped in).
+Here's how you can make this work with Calva Paredit: Update all of the `Paredit: Wrap Around ...` commands so that their respective shortcuts are the wrappers themselves and update the `when` clause to include `editorHasSelection` (otherwise when you open a paren the next expression would get slurped in).
 
 The change would look like this in your `keybindings.json`:
 
