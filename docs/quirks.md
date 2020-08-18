@@ -17,7 +17,7 @@ However, with VS Code and Calva it is probably better to learn to use [Paredit](
 
 ## MacOS and the Slurp and Barf Keyboard Shortcuts
 
-To make slurping and barfing forward really easy to perform they are bound to `ctrl+right` and `ctrl+left`, respectively. However on MacOS those shortcuts are sometimes bound by Mission Control, causing the Calva shortcuts to not work. One way to solve it is to disable the shortcuts in *System Preferences -> Keyboard -> Shortcuts*:
+To make slurping and barfing forward really easy to perform they are bound to `ctrl+right` and `ctrl+left`, respectively. However, on MacOS those shortcuts are sometimes bound by Mission Control, causing the Calva shortcuts to not work. One way to solve it is to disable the shortcuts in *System Preferences -> Keyboard -> Shortcuts*:
 
 ![Disable Mission Control Shortcuts](images/howto/mission-control-shortcuts.gif)
 
@@ -25,15 +25,15 @@ To make slurping and barfing forward really easy to perform they are bound to `c
 
 See [Using Calva with the VIM Extension](vim.md).
 
-## ”Command not found” errors on Jack-in
+## ”Command not found” Errors on Jack-in
 
-[Jack-in](jack-in-guide.md) starts by spawning of a command in the shell. You will need the commands used installed on your computer:
+[Jack-in](jack-in-guide.md) starts by running a command in a new terminal. You will need the commands used installed on your computer:
 
 * `clojure` for tools.deps/Clojure CLI
 * `lein` for Leiningen
 * `npx` for shadow-cljs
 
-Also, in some circumstances VS Code is not spawned from a shell with the environment variables, expecially `$PATH`, which might mean that even though you have the tools installed, they are not found when VS Code/Calva tries to execute them. To fix this you will need to do one of these two things:
+Also, in some circumstances VS Code is not spawned from a shell with the environment variables, especially `$PATH`, which might mean that even though you have the tools installed, they are not found when VS Code/Calva tries to execute them. To fix this you will need to do one of these two things:
 
 1. Figure out from where VS Code is spawned, and make sure the `$PATH` there includes the directoy with the needed binary.
 1. Start VS Code from a terminal where the `$PATH` is correctly configured. (Using the `code` commmand.)
