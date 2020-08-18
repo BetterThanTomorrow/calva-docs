@@ -28,4 +28,4 @@ If you have a re-frame project created from the template w/o the `+calva` option
     ],
 ```
 
-Then **Jack-in**.
+Then **Jack-In**.
