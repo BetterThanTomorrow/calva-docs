@@ -58,17 +58,13 @@ Default keybinding      | Action | Description
 
 ### Selecting
 
+Most of these commands are selecting ”versions” of the navigation commands above. Repeated use will grow the current selection step by step.
+
 Default keybinding    | Action | Description
 ------------------    | ------ | -----------
  `ctrl+w`                | **Expand Selection** | Starts from the cursor and selects the current form. Then will keep expanding to enclosing forms.<br> ![](images/paredit/grow-selection.gif)
  `ctrl+shift+w`          | **Shrink Selection** | Contracts back from an expanded selection performed by any Paredit selection command.<br> ![](images/paredit/shrink-selection.gif)<br>(In the animation the selection is first grown using a combination of **Grow Selection** and some lateral selection commands, then shrunk all the way back down to no selection.)
  `ctrl+alt+w space`      | **Select Top Level Form** | Top level in a structural sence. Typically where your`(def ...)`/`(defn ...)` type forms. Please note that`(comment ...)` forms create a new top level. <br> ![](images/paredit/select-top-level-form.gif)
-
-
-The selecting ”versions” of the navigation commands above. They will all grow the current selection as far as the **Shrink Selection** command is concerned.
-
-Default keybinding    | Action | Description
-------------------    | ------ | --------------
  `ctrl+shift+alt+right`  | **Select Forward Sexp** | ![](images/paredit/select-forward-sexp.gif)
  `ctrl+shift+alt+left`   | **Select Backward Sexp** | ![](images/paredit/select-backward-sexp.gif)
  `ctrl+shift+down`       | **Select Forward Down Sexp** | ![](images/paredit/select-forward-down-sexp.gif) <br>(You probably do not need to select like this, but you can!)
@@ -78,7 +74,8 @@ Default keybinding    | Action | Description
  `ctrl+shift+end`        | **Select Forward to List End/Close** | ![](images/paredit/select-close-list.gif)
  `ctrl+shift+home`       | **Select Backward to List Start/Open** | ![](images/paredit/select-open-list.gif)
 
-(Earlier versions of Calva had commands for copying, cutting and deleting that corresponded to all movements. This has now been replaced with this selection commands, and you can choose to copy/cut/delete once you have the selection.)
+!!! Note
+Many implementations of Paredit have commands for copying/cutting while deleting. In Calva there are instead the above selection commands, and you can choose to copy/cut once you have the selection.
 
 ### Editing
 
