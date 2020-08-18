@@ -55,4 +55,10 @@ Then why not always do it client side? It turns out that on the client side ther
 
 The current options are limited, because our time developing Calva is limited. But `cider-nrepl` really allows for fully configurable pretty printing, so it is within reach. Please feel invited to give us feedback on what you would want to configure for the printing of results. File issues and/or chat us up in #calva in the Clojurians slack.
 
+### Troubleshooting
+
+#### pprint is not working for ClojureScript
+
+If you're using shadow-cljs and not using the `calva` pprint engine, you need to set `:repl-pprint` to `true` in `:devtools` of your shadow-cljs build. See [here](https://shadow-cljs.github.io/docs/UsersGuide.html#_repl_3) for more details.
+
 Enjoy Prettiful Printing! ❤️
