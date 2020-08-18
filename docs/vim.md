@@ -10,7 +10,7 @@ Calva's various structural selection commands [do not put VIM into VISUAL mode](
 
 In general Calva's default key bindings are not very VI-ish.
 
-You can add these keybindings to your `init.vim` if you are using the VSCode Neovim extension. It is inspired by and tries to emulate the keybindings found in [vim-fireplace](https://github.com/tpope/vim-fireplace) which is the most popular vim plugin for clojure.
+You can add these keybindings to your `init.vim` if you are using the VSCode Neovim extension. It is inspired by and tries to emulate the keybindings found in [vim-fireplace](https://github.com/tpope/vim-fireplace) which is the most popular vim plugin for Clojure.
 
 ```
 nmap cqp :call VSCodeNotify('calva.jackIn')<CR>
@@ -29,7 +29,7 @@ Calva binds **expand selection** to `ctrl+w`. This conflicts with the VIM Extens
 
 ### The `esc` key
 
-Calva binds the `esc` key to dismiss the display of inline results. This gets into conflict with any `vi` coding since `esc` then is used to go back to command mode. You can either fix Calva's default keybinding or the VIM extension.
+Calva binds the `esc` key to dismiss the display of inline results. This gets into conflict with any `vi` coding since `esc` then is used to go back to command mode. You can either change Calva's default keybinding or the VIM extension's.
 
 Alternatively, you can use the native Vim command `Ctrl + [` to escape and get back to command mode. Rebinding your keyboard's CapsLock key to Control may make this even easier.
 

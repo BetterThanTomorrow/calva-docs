@@ -8,10 +8,10 @@ From a Clojure perspective it allows you to have VS Code installed on your Java-
 
 ## A use-case
 
-- for some reason your physical computer has to be running Windows (organisational rules etc.)
-- your deployment environment is Linux
-- you want to edit files in an editor running on your physical computer
-- most Clojure tooling is made with *nix first in mind and there are incompatibilities with Windows
+- For some reason your physical computer has to be running Windows (organizational rules etc.)
+- Your deployment environment is Linux
+- You want to edit files in an editor running on your physical computer
+- Most Clojure tooling is made with *nix first in mind and there are incompatibilities with Windows
 
 ## WSL
 
