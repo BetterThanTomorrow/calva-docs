@@ -24,7 +24,7 @@ _Disable at your own peril._ Strict mode can be toggled on/off using the **Toggl
 Indicator | Paredit Mode
 :-------: | ------
 `[λ]`     | Strict
-`(λ)`     | Cave Man
+`(λ)`     | Cave Man (strict mode off)
  `λ`      | No default key bindings
 
 Toggle bewteen Strict and Cave Man using: `ctrl+alt+p ctrl+alt+m`
