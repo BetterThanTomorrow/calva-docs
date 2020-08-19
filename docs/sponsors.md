@@ -1,6 +1,6 @@
 # Calva Sponsors
 
-Calva is open source and free to use. It is actively maintained during our free time, and it keeps improving. You can contribute in many different ways, one of which is sponsoring. Currently you can [sponsor Peter Strömberg. using GitHub Sponsors](https://github.com/sponsors/PEZ). There you can see who is sponsoring me, and this is also displayed on the [Calva README](https://github.com/BetterThanTomorrow/calva#calva-sponsors-%EF%B8%8F).
+Calva is open source and free to use. It is actively maintained during our free time, and it keeps improving. You can contribute in many different ways, one of which is sponsoring. Currently you can sponsor [Peter Strömberg](https://github.com/sponsors/PEZ) and [Brandon Ringe](https://github.com/sponsors/bpringe). There you can see who is sponsoring us, and this is also displayed on the [Calva README](https://github.com/BetterThanTomorrow/calva#calva-sponsors-%EF%B8%8F).
 
 If you are working at a company which benefits from Calva's existence and continued development, please consider [sponsoring at the Calva Gold Sponsor tier](https://github.com/sponsors/PEZ).
 
