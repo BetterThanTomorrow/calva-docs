@@ -33,7 +33,7 @@ Other basic docs that you should be familiar with are [the clojure Deps and CLI 
     * `:main` should point to your test driver.
 
 ## Check things work without webpack
-Clone [fresh-figwheel-main](https://github.com/PEZ/fresh-figwheel-main/blob/master/deps.edn) first. Use Calva Jack in and check that teh app launches at localhost:9500. In a separate tab you should see the tests running at localhost:9500/figwheel-extra-main/auto-testing for a nice heads-up display with test notifications appearing in the editor. 
+Clone [fresh-figwheel-main](https://github.com/PEZ/fresh-figwheel-main/blob/master/deps.edn) first. Use Calva Jack in and check that the app launches at localhost:9500. In a separate tab you should see the tests running at localhost:9500/figwheel-extra-main/auto-testing for a nice heads-up display with test notifications appearing in the editor. 
 
 
 ## Adding NPM modules
@@ -59,7 +59,7 @@ For web apps, you will commonly want to include react libs as NPM module. NPM in
 We'll change the fresh-figwheel-main `build` alias to a webpack build.
 
 Create a build configuration for it which has :target set to :bundle. This triggers creation of a webpack compatible bundle.
-The figwheel docs suggest that the :bundle-cmd is optional. I have not found it to be so. We'll leave out the :output-to and :final-output-to keys as figwheel will insert its defaults. 
+The figwheel docs suggest that the :bundle-cmd is optional, but I have not found it to be so. However, we can leave out the :output-to and :final-output-to keys as figwheel will insert its defaults into the command line there. 
 
 ```
 ^{:watch-dirs ["test" "src"]
@@ -74,7 +74,7 @@ The figwheel docs suggest that the :bundle-cmd is optional. I have not found it 
 ## Reconfigure deps
 We can now exclude the cljsjs packages as these will be brought in from npm-modules in the webpack bundle.
 Notice also that the `:build` alias now targets the "build" build.
-
+```
 {:deps {org.clojure/clojure {:mvn/version "1.10.0"}
         org.clojure/clojurescript {:mvn/version "1.10.773"}
         reagent {:mvn/version "1.0.0-alpha2"
@@ -89,7 +89,7 @@ Notice also that the `:build` alias now targets the "build" build.
            :build {:main-opts ["-m" "figwheel.main" "-b" "build" "-r"]}
            :min   {:main-opts ["-m" "figwheel.main" "-O" "advanced" "-bo" "dev"]}
            :test  {:main-opts ["-m" "figwheel.main" "-co" "test.cljs.edn" "-m" "fresh-figwheel-main.test-runner"]}}}
-
+```
 ## Calva Jack-in to start the build
 If you now Jack-in and select BOTH `fig` and `build` the `build` alias will run `figwheel.main`. 
 Notice that it runs the compilation and then runs webpack, creating final artefacts at `target/public/cljs-out/build/main_bundle.js` and `target/public/cljs-out/build/main_bundle-auto-testing.js`.
@@ -108,7 +108,7 @@ The Jack-in will not complete in the output.repl-file window as the figwheel REP
 [Figwheel] Outputting main file: target/public/cljs-out/build/main-auto-testing.js
 [Figwheel] Bundling: npx webpack --mode=development target/public/cljs-out/build/main-auto-testing.js -o target/public/cljs-out/build/main_bundle-auto-testing.js
 [Figwheel] Watching paths: ("test" "src") to compile build - build
-[Figwheel] Starting Server at http://localhost:9600
+[Figwheel] Starting Server at http://localhost:9500
 [Figwheel] Starting REPL
 Prompt will show when REPL connects to evaluation environment (i.e. a REPL hosting webpage)
 Figwheel Main Controls:
@@ -130,7 +130,7 @@ Opening URL http://localhost:9500
 ```
 ## Edit the HTML to reference the bundled js
 
-http://localhost:9500 is probably showing a blank white page and teh console will be saying that "react" is undefined.
+http://localhost:9500 is probably showing a blank white page and the console will be saying that "react" is undefined.
 That's because the html is still pointing at the unbundled output which no longer includes react as we excluded it. 
 
 Edit `target/public/index.html` to reference `<script src="cljs-out/build/main_bundle.js"></script>`, and all should now work
