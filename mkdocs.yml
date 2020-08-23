@@ -38,6 +38,7 @@ nav:
     - remote-development.md
     - luminus.md
     - re-frame-template.md
+    - figwheel-main-webpack.md
   - Etcetera:
     - workspace-layouts.md
     - quirks.md
