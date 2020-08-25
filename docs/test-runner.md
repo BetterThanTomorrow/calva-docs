@@ -1,6 +1,6 @@
 # Test Runner
 
-Calva provides commands that can make running Clojure tests easier.
+Calva provides commands that make running your Clojure tests easier.
 
 !!! Note
     Since the test commands utilize cider-nrepl, they only work with Clojure, not ClojureScript. See [this issue](https://github.com/clojure-emacs/cider-nrepl/issues/555) for more details.
