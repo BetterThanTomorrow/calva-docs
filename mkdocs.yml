@@ -27,6 +27,7 @@ nav:
     - paredit.md
     - debugger.md
     - pprint.md
+    - test-runner.md
     - connect-sequences.md
     - custom-commands.md
     - linting.md
