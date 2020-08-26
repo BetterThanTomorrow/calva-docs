@@ -17,3 +17,15 @@ Run Current Test | `ctrl+alt+c ctrl+alt+t` | Runs the test at the cursor. This i
 ## Test on Save
 
 You can enable the Calva setting "Test on Save" to have tests for the current namespace run on file save.
+
+## Troubleshooting
+
+### Tests Are Not Found
+
+If you have tests in a test directory separate from your source directory, and those tests are not being found by the test runner, make sure the test directory is included in your paths. This will not be the case by default with a tools.deps (deps.edn) project. If your project is a tools.deps project, you can create an alias in your deps.edn file with `:extra-paths` that includes `"test"` (or the name of your test directory).
+
+```clojure
+{:aliases {:dev {:extra-paths ["test"]}}}
+```
+
+Having added the above to your deps.edn, when you jack-in, choose the `:dev` alias and the `test` directory will be added to your paths, which will allow tests located in the directory to be found by the test runner. 
